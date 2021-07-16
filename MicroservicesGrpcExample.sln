@@ -5,11 +5,11 @@ VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DFF1B8D5-E88F-49B2-BCFF-79DD5F9A36B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Client", "src\MicroservicesGrpcExample.Client\MicroservicesGrpcExample.Client.csproj", "{F40FC44F-950C-4873-9097-5E7C523E3E9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Services.Client", "src\MicroservicesGrpcExample.Services.Client\MicroservicesGrpcExample.Services.Client.csproj", "{F40FC44F-950C-4873-9097-5E7C523E3E9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Server", "src\MicroservicesGrpcExample.Server\MicroservicesGrpcExample.Server.csproj", "{39E39900-C0C8-4C58-929A-BE6C1C51BD02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Services.Server", "src\MicroservicesGrpcExample.Services.Server\MicroservicesGrpcExample.Services.Server.csproj", "{39E39900-C0C8-4C58-929A-BE6C1C51BD02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Protos", "src\MicroservicesGrpcExample.Protos\MicroservicesGrpcExample.Protos.csproj", "{C5664032-170C-40DB-BE07-784DA158BAF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Server.Protos", "src\MicroservicesGrpcExample.Server.Protos\MicroservicesGrpcExample.Server.Protos.csproj", "{C5664032-170C-40DB-BE07-784DA158BAF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
