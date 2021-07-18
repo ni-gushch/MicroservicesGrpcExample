@@ -18,6 +18,11 @@ namespace MicroservicesGrpcExample.Client
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(opt =>
+                {
+                    opt.ClearProviders();
+                    opt.AddConsole();
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MicroservicesGrpcExample.Services.Server.Protos";
+
+package microservicesgrpcexample.services.server.protos;
+
+import "google/protobuf/empty.proto";
+
+service BookStore {
+  rpc GetAll (google.protobuf.Empty) returns (google.protobuf.Empty);
+}
+
+message Store{
+  //Book tre = 1;
+}

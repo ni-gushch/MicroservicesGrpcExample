@@ -7,11 +7,24 @@
 
   <ItemGroup>
     <Folder Include="BLL" />
-    <Folder Include="Grpc" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Protobuf Include="Protos\*.proto" />
+    <Protobuf Include="$(PkgMicroservicesGrpcExample_Server_Protos)/content/Protos/*.proto" />
+  </ItemGroup>
+  
 
   <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.38.0" />
     <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MicroservicesGrpcExample.Server.Protos" Version="0.0.7" GeneratePathProperty="true" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.7" />
+    <PackageReference Include="Google.Protobuf" Version="3.17.3" />
+    <PackageReference Include="Grpc.Tools" Version="2.38.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
