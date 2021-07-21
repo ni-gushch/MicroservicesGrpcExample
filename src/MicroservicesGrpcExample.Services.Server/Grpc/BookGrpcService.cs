@@ -9,6 +9,7 @@ namespace MicroservicesGrpcExample.Server.Grpc
     {
         public override Task<Empty> GetAll(Empty request, ServerCallContext context)
         {
+            return Task.FromResult(new Empty());
         }
     }
 }

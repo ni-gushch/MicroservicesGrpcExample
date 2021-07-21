@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesGrpcExample.Core.Shared.Protos", "src\MicroservicesGrpcExample.Core.Shared.Protos\MicroservicesGrpcExample.Core.Shared.Protos.csproj", "{C5664032-170C-40DB-BE07-784DA158BAF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme", "readme", "{4749BD2B-3197-4CC0-B8BA-A65679521699}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+	readme_localization\README.en.md = readme_localization\README.en.md
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
