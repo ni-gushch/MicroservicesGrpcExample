@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <PackageId>MicroservicesGrpcExample.Core.Shared.Protos</PackageId>
+        <Version>0.0.2</Version>
+        <Authors>GNikoDev</Authors>
+        <Company>DevExpanse</Company>
+        <PackageDescription>This package adds an Octocat!</PackageDescription>
+        <RepositoryUrl>https://github.com/OWNER/REPOSITORY</RepositoryUrl>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.17.3" />
+        <PackageReference Include="Grpc.Tools" Version="2.38.1">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="protos\**\*.proto">
+        <Pack>true</Pack>
+        <PackagePath>protos</PackagePath>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+</Project>
