@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Commands\CreateAuthor" />
+      <Folder Include="Commands\CreateBook" />
+      <Folder Include="Commands\DeleteAuthor" />
+      <Folder Include="Commands\DeleteBook" />
+      <Folder Include="Commands\UpdateAuthor" />
+      <Folder Include="Commands\UpdateBook" />
+      <Folder Include="Models\DTOs" />
+      <Folder Include="Queries\GetAllAuthors" />
+      <Folder Include="Queries\GetAllBooks" />
+      <Folder Include="Queries\GetAuthorById" />
+      <Folder Include="Queries\GetBookById" />
+    </ItemGroup>
+
+</Project>

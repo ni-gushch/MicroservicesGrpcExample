@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MicroservicesGrpcExample.Server;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
-namespace MicroservicesGrpcExample.Server
+namespace MicroservicesGrpcExample.Platform.Books.Service
 {
     public class Program
     {

@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <PackageId>MicroservicesGrpcExample.Core.Shared.Protos</PackageId>
-        <Version>0.0.2</Version>
+        <PackageId>MicroservicesGrpcExample.Core.Shared</PackageId>
+        <Version>0.0.1</Version>
         <Authors>GNikoDev</Authors>
         <Company>DevExpanse</Company>
         <PackageDescription>This package adds an Octocat!</PackageDescription>
@@ -24,8 +24,6 @@
       <Content Include="protos\**\*.proto">
         <Pack>true</Pack>
         <PackagePath>protos</PackagePath>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
     </ItemGroup>
 

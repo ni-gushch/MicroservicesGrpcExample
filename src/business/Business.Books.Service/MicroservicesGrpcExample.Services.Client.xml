@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MicroservicesGrpcExample.Business.Books.Service</name>
+    </assembly>
+    <members>
+        <member name="T:MicroservicesGrpcExample.Client.Controllers.BooksController">
+            <summary>
+            Controller for manage books
+            </summary>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Controllers.BooksController.#ctor(Microsoft.Extensions.Logging.ILogger{MicroservicesGrpcExample.Client.Controllers.BooksController})">
+            <summary>
+            Constructor with parameters
+            </summary>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> instance</param>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Controllers.BooksController.GetAll">
+            <summary>
+            Get all books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MicroservicesGrpcExample.Client.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extension class that encapsulated settings and services in service collection
+            </summary>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Extensions.ServiceCollectionExtensions.AddCustomOptions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add custom options to service collection
+            </summary>
+            <param name="services">Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+            <param name="configuration">Instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/></param>
+            <returns>Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></returns>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Extensions.ServiceCollectionExtensions.AddCustomSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add Swagger to service and configure it
+            </summary>
+            <param name="services">Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+            <param name="configuration">Instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/></param>
+            <returns>Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></returns>
+        </member>
+    </members>
+</doc>
