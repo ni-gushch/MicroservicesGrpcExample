@@ -10,6 +10,7 @@ namespace MicroservicesGrpcExample.Platform.Books.Service.Extensions
     {
         public static IServiceCollection AddCustomServices(this IServiceCollection services)
         {
+            services.AddSqLiteDbContextsRegistration();
             services.AddRepositoriesRegistration();
 
             return services;
