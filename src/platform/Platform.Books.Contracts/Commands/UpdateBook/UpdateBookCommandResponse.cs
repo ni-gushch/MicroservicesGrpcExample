@@ -1,4 +1,4 @@
-namespace MicroservicesGrpcExample.Platform.Books.Contracts
+namespace MicroservicesGrpcExample.Platform.Books.Contracts.Commands
 {
     public class UpdateBookCommandResponse
     {

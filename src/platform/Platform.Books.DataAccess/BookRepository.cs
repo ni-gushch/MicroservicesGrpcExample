@@ -25,33 +25,33 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess
             _mapper = mapper;
         }
 
-        public Task<List<Book>> GetAll(CancellationToken cancellationToken = default)
+        public Task<List<Book>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             return _dbSetNoTrackingIncludeAuthors
                 .ToListAsync(cancellationToken);
         }
 
-        public Task<Book> GetById(int bookId, CancellationToken cancellationToken = default)
+        public Task<Book> GetByIdAsync(int bookId, CancellationToken cancellationToken = default)
         {
             return _dbSetNoTrackingIncludeAuthors
                 .FirstOrDefaultAsync(it => it.Id.Equals(bookId), cancellationToken);
         }
 
-        public Task<List<Book>> GetByTitle(string title, CancellationToken cancellationToken = default)
+        public Task<List<Book>> GetByTitleAsync(string title, CancellationToken cancellationToken = default)
         {
             return _dbSetNoTrackingIncludeAuthors
                 .Where(it => EF.Functions.Like(it.Title, $"%{title}%"))
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<int> Create(Book book, CancellationToken cancellationToken = default)
+        public async Task<int> CreateAsync(Book book, CancellationToken cancellationToken = default)
         {
             var entity = await DbSet.AddAsync(book, cancellationToken);
             var saveStatus = BookLibraryContext.SaveChangesAsync(cancellationToken);
             return entity.Entity.Id;
         }
 
-        public async Task<bool> Update(Book bookToUpdate, CancellationToken cancellationToken = default)
+        public async Task<bool> UpdateAsync(Book bookToUpdate, CancellationToken cancellationToken = default)
         {
             var entityInDb = await DbSet.FirstOrDefaultAsync(it => it.Id.Equals(bookToUpdate.Id),
                 cancellationToken);
@@ -62,7 +62,7 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess
             return saveStatus > 0;
         }
         
-        public async Task<bool> Delete(Book bookToDelete, CancellationToken cancellationToken = default)
+        public async Task<bool> DeleteAsync(Book bookToDelete, CancellationToken cancellationToken = default)
         {
             var entityInDb = await DbSet.FirstOrDefaultAsync(it => it.Id.Equals(bookToDelete.Id),
                 cancellationToken);
@@ -73,7 +73,7 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess
             return saveStatus > 0;
         }
         
-        public async Task<bool> Delete(int bookIdToDelete, CancellationToken cancellationToken = default)
+        public async Task<bool> DeleteAsync(int bookIdToDelete, CancellationToken cancellationToken = default)
         {
             var entityInDb = await DbSet.FirstOrDefaultAsync(it => it.Id.Equals(bookIdToDelete),
                 cancellationToken);
