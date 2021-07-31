@@ -1,12 +1,12 @@
 ﻿syntax = "proto3";
-package microservicesgrpcexample.services.server.protos;
+package microservicesgrpcexample.platform.books.protos;
 
-option csharp_namespace = "MicroservicesGrpcExample.Services.Server.Protos";
+option csharp_namespace = "MicroservicesGrpcExample.Platform.Books.Protos";
 
 import "google/protobuf/empty.proto";
 import "Protos/microservicegrpcexample/bookstore/sharedbooks.proto/sharedbooks.proto";
 
-service BookStore {
+service BookLibrary {
   rpc GetAll (google.protobuf.Empty) returns (google.protobuf.Empty);
 }
 

@@ -1,7 +1,9 @@
 using System;
 using MicroservicesGrpcExample.Platform.Books.Contracts.Repositories;
+using MicroservicesGrpcExample.Platform.Books.DataAccess.Configurations;
 using MicroservicesGrpcExample.Platform.Books.DataAccess.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroservicesGrpcExample.Platform.Books.DataAccess.Extensions
@@ -11,12 +13,15 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess.Extensions
     /// </summary>
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddSqLiteDbContextsRegistration(this IServiceCollection services)
+        public static IServiceCollection AddSqLiteDbContextsRegistration(this IServiceCollection services, IConfiguration configuration)
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var dbPath = $"{path}{System.IO.Path.DirectorySeparatorChar}blogging.db";
+            var connectionString = configuration.GetSection(nameof(SqLiteDbConfiguration))
+                .GetConnectionString(nameof(SqLiteDbConfiguration.ConnectionString));
+            if (string.IsNullOrWhiteSpace(connectionString))
+                throw new Exception($"Connection string for SqLite is not defined. Configuration: {nameof(SqLiteDbConfiguration)}");
+            
             services.AddDbContext<BookLibraryDbContext>(opt =>
-                opt.UseSqlite($"Data Source={dbPath}"));
+                opt.UseSqlite(connectionString));
 
             return services;
         }

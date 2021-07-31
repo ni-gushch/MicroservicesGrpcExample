@@ -1,4 +1,5 @@
 using MicroservicesGrpcExample.Platform.Books.DataAccess.Extensions;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroservicesGrpcExample.Platform.Books.Service.Extensions
@@ -8,9 +9,9 @@ namespace MicroservicesGrpcExample.Platform.Books.Service.Extensions
     /// </summary>
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddCustomServices(this IServiceCollection services)
+        public static IServiceCollection AddCustomServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSqLiteDbContextsRegistration();
+            services.AddSqLiteDbContextsRegistration(configuration);
             services.AddRepositoriesRegistration();
 
             return services;
