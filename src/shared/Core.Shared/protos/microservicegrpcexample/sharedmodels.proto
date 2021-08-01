@@ -5,9 +5,14 @@ option csharp_namespace = "MicroservicesGrpcExample.Core.Shared.Protos";
 
 import "google/protobuf/empty.proto";
 
-message Book{
+message IntIdModel{
   int32 id = 1;
-  string title = 2;
-  string author = 3;
-  int32 publishyear = 4;
+}
+
+message IntIdsCollectionModel{
+  repeated int32 ids = 1;
+}
+
+message ActionResultModel{
+  bool result = 1;
 }

@@ -1,0 +1,35 @@
+﻿syntax = "proto3";
+package microservicesgrpcexample.platform.books.protos;
+
+option csharp_namespace = "MicroservicesGrpcExample.Platform.Books.Protos";
+
+import "google/protobuf/empty.proto";
+import "microservicegrpcexample/sharedmodels.proto";
+
+service BookLibraryService {
+  rpc GetAll (google.protobuf.Empty) returns (google.protobuf.Empty);
+  rpc GetById (microservicesgrpcexample.core.shared.protos.IntIdModel) returns (BooksResponse);
+  rpc Create (CreateBookRequest) returns (microservicesgrpcexample.core.shared.protos.IntIdModel);
+  rpc Update (UpdateBookRequest) returns (microservicesgrpcexample.core.shared.protos.ActionResultModel);
+  rpc Delete (microservicesgrpcexample.core.shared.protos.IntIdModel) returns (microservicesgrpcexample.core.shared.protos.ActionResultModel);
+}
+
+message CreateBookRequest{
+  
+}
+
+message UpdateBookRequest{
+  
+}
+
+message BooksResponse{
+
+}
+
+message BookResponse{
+  
+}
+
+message BookModel{
+  
+}

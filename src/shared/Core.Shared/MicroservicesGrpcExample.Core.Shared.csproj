@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <PackageId>MicroservicesGrpcExample.Core.Shared</PackageId>
-        <Version>0.0.1</Version>
+        <Version>0.0.3</Version>
         <Authors>GNikoDev</Authors>
         <Company>DevExpanse</Company>
         <PackageDescription>This package adds an Octocat!</PackageDescription>

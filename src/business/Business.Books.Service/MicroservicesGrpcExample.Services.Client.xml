@@ -4,43 +4,112 @@
         <name>MicroservicesGrpcExample.Business.Books.Service</name>
     </assembly>
     <members>
+        <member name="T:MicroservicesGrpcExample.Client.Configurations.ServiceConfiguration">
+            <summary>
+            Configuration for current service
+            </summary>
+        </member>
+        <member name="P:MicroservicesGrpcExample.Client.Configurations.ServiceConfiguration.Name">
+            <summary>
+            Service name
+            </summary>
+        </member>
+        <member name="P:MicroservicesGrpcExample.Client.Configurations.ServiceConfiguration.Version">
+            <summary>
+            Service version
+            </summary>
+        </member>
+        <member name="P:MicroservicesGrpcExample.Client.Configurations.ServiceConfiguration.Description">
+            <summary>
+            Service description
+            </summary>
+        </member>
         <member name="T:MicroservicesGrpcExample.Client.Controllers.BooksController">
             <summary>
-            Controller for manage books
+                Controller for manage books
             </summary>
         </member>
         <member name="M:MicroservicesGrpcExample.Client.Controllers.BooksController.#ctor(Microsoft.Extensions.Logging.ILogger{MicroservicesGrpcExample.Client.Controllers.BooksController})">
             <summary>
-            Constructor with parameters
+                Constructor with parameters
             </summary>
-            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> instance</param>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger`1" /> instance</param>
         </member>
         <member name="M:MicroservicesGrpcExample.Client.Controllers.BooksController.GetAll">
             <summary>
-            Get all books
+                Get all books
             </summary>
             <returns></returns>
         </member>
         <member name="T:MicroservicesGrpcExample.Client.Extensions.ServiceCollectionExtensions">
             <summary>
-            Extension class that encapsulated settings and services in service collection
+                Extension class that encapsulated settings and services in service collection
             </summary>
         </member>
         <member name="M:MicroservicesGrpcExample.Client.Extensions.ServiceCollectionExtensions.AddCustomOptions(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
-            Add custom options to service collection
+                Add custom options to service collection
             </summary>
-            <param name="services">Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
-            <param name="configuration">Instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/></param>
-            <returns>Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></returns>
+            <param name="services">Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></param>
+            <param name="configuration">Instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration" /></param>
+            <returns>Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></returns>
         </member>
         <member name="M:MicroservicesGrpcExample.Client.Extensions.ServiceCollectionExtensions.AddCustomSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
-            Add Swagger to service and configure it
+                Add Swagger to service and configure it
             </summary>
-            <param name="services">Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
-            <param name="configuration">Instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/></param>
-            <returns>Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></returns>
+            <param name="services">Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></param>
+            <param name="configuration">Instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration" /></param>
+            <returns>Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></returns>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Extensions.ServiceCollectionExtensions.AddCustomLogger(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add custom logging services
+            </summary>
+            <param name="services">Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></param>
+            <param name="configuration">Instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration" /></param>
+            <returns>Original instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></returns>
+        </member>
+        <member name="T:MicroservicesGrpcExample.Client.Program">
+            <summary>
+            Program class. Service entrypoint 
+            </summary>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Program.Main(System.String[])">
+            <summary>
+            Main method. Service entrypoint 
+            </summary>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Program class. Service entrypoint 
+            </summary>
+        </member>
+        <member name="T:MicroservicesGrpcExample.Client.Startup">
+            <summary>
+            Startup class. Service entrypoint
+            </summary>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+            <param name="webHostEnvironment"></param>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MicroservicesGrpcExample.Client.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Options.IOptions{MicroservicesGrpcExample.Client.Configurations.ServiceConfiguration})">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="serviceConfiguration"></param>
         </member>
     </members>
 </doc>

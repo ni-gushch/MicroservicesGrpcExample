@@ -59,7 +59,13 @@ namespace MicroservicesGrpcExample.Client.Extensions
             return services;
         }
 
-        public static IServiceCollection AddCustomLoggig(this IServiceCollection services, IConfiguration configuration)
+        /// <summary>
+        /// Add custom logging services
+        /// </summary>
+        /// <param name="services">Original instance of <see cref="IServiceCollection" /></param>
+        /// <param name="configuration">Instance of <see cref="IConfiguration" /></param>
+        /// <returns>Original instance of <see cref="IServiceCollection" /></returns>
+        public static IServiceCollection AddCustomLogger(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddLogging(opt =>
             {

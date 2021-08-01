@@ -9,19 +9,29 @@ using Microsoft.Extensions.Options;
 
 namespace MicroservicesGrpcExample.Client
 {
+    /// <summary>
+    /// Startup class. Service entrypoint
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="webHostEnvironment"></param>
         public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
             Configuration = configuration;
             WebHostEnvironment = webHostEnvironment;
         }
 
-        public IConfiguration Configuration { get; }
-        public IWebHostEnvironment WebHostEnvironment { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        private IConfiguration Configuration { get; }
+        private IWebHostEnvironment WebHostEnvironment { get; }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCustomOptions(Configuration)
@@ -30,7 +40,12 @@ namespace MicroservicesGrpcExample.Client
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
+        /// <param name="serviceConfiguration"></param>
         public void Configure(IApplicationBuilder app,
             IWebHostEnvironment env,
             IOptions<ServiceConfiguration> serviceConfiguration)

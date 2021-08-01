@@ -5,18 +5,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Protobuf Include="Protos\**\*.proto" />
+        <Protobuf Include="Protos/**/*.proto" ProtoRoot="Protos" />
     </ItemGroup>
 
 
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.38.0" />
-        <PackageReference Include="MicroservicesGrpcExample.Core.Shared.Protos" Version="0.0.2" GeneratePathProperty="true" />
         <PackageReference Include="Google.Protobuf" Version="3.17.3" />
         <PackageReference Include="Grpc.Tools" Version="2.38.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="MicroservicesGrpcExample.Core.Shared" Version="0.0.3" GeneratePathProperty="true" />
     </ItemGroup>
 
     <ItemGroup>
@@ -26,9 +26,9 @@
 
     <Target Name="MoveProtosFromPackages" BeforeTargets="Build">
         <ItemGroup>
-            <PackageSourceFolder Include="$(PkgMicroservicesGrpcExample_Core_Shared_Protos)\protos\**\*.*" />
+            <PackageSourceFolder Include="$(PkgMicroservicesGrpcExample_Core_Shared)\protos\**\*.*" />
         </ItemGroup>
-        <Copy SourceFiles="@(PackageSourceFolder)" DestinationFolder="@(PackageSourceFolder->'$(MSBuildProjectDirectory)\Protos\%(RecursiveDir)%(Filename)%(Extension)')" />
+        <Copy SourceFiles="@(PackageSourceFolder)" DestinationFolder="@(PackageSourceFolder->'$(MSBuildProjectDirectory)\Protos\%(RecursiveDir)')" />
     </Target>
 
 </Project>
