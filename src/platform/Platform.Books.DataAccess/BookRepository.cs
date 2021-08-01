@@ -16,7 +16,7 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess
     {
         private readonly IIncludableQueryable<Book, Author> _dbSetNoTrackingIncludeAuthors;
         private readonly IMapper _mapper;
-        
+
         public BookRepository(BookLibraryDbContext dbContext,
             IMapper mapper) : base(dbContext)
         {
@@ -61,7 +61,7 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess
             var saveStatus = await BookLibraryContext.SaveChangesAsync(cancellationToken);
             return saveStatus > 0;
         }
-        
+
         public async Task<bool> DeleteAsync(Book bookToDelete, CancellationToken cancellationToken = default)
         {
             var entityInDb = await DbSet.FirstOrDefaultAsync(it => it.Id.Equals(bookToDelete.Id),
@@ -72,7 +72,7 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess
             var saveStatus = await BookLibraryContext.SaveChangesAsync(cancellationToken);
             return saveStatus > 0;
         }
-        
+
         public async Task<bool> DeleteAsync(int bookIdToDelete, CancellationToken cancellationToken = default)
         {
             var entityInDb = await DbSet.FirstOrDefaultAsync(it => it.Id.Equals(bookIdToDelete),

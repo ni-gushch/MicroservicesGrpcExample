@@ -14,7 +14,8 @@ namespace MicroservicesGrpcExample.Platform.Books.BusinessLogic.Handlers
         {
         }
 
-        public override async Task<CreateBookCommandResponse> Handle(CreateBookCommand request, CancellationToken cancellationToken)
+        public override async Task<CreateBookCommandResponse> Handle(CreateBookCommand request,
+            CancellationToken cancellationToken)
         {
             var bookEntity = Mapper.Map<Book>(request);
             var result = await Repository.CreateAsync(bookEntity, cancellationToken);

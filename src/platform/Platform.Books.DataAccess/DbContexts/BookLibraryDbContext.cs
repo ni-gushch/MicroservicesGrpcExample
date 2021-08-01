@@ -8,10 +8,6 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess.DbContexts
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
 
-        public BookLibraryDbContext()
-        {
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>()
@@ -23,7 +19,7 @@ namespace MicroservicesGrpcExample.Platform.Books.DataAccess.DbContexts
 
             modelBuilder.Entity<Author>()
                 .HasKey(it => it.Id);
-            
+
             base.OnModelCreating(modelBuilder);
         }
 

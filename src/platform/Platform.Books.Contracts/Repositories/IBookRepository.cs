@@ -6,7 +6,7 @@ using MicroservicesGrpcExample.Platform.Books.Contracts.Models.Entities;
 namespace MicroservicesGrpcExample.Platform.Books.Contracts.Repositories
 {
     /// <summary>
-    /// Book repository contracts
+    ///     Book repository contracts
     /// </summary>
     public interface IBookRepository
     {

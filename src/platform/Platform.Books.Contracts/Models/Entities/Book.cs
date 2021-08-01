@@ -5,29 +5,30 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MicroservicesGrpcExample.Platform.Books.Contracts.Models.Entities
 {
     /// <summary>
-    /// Model of 
+    ///     Model of
     /// </summary>
     public class Book : IIdModel<int>
     {
-        /// <inheritdoc cref="Id"/>
-        [Key]
-        public int Id { get; set; }
         /// <summary>
-        /// Title of the book
+        ///     Title of the book
         /// </summary>
         [MaxLength(100)]
         public string Title { get; set; }
+
         /// <summary>
-        /// Book description
+        ///     Book description
         /// </summary>
         [MaxLength(200)]
         public string Description { get; set; }
 
         public DateTime DateOfPublication { get; set; }
-        
-        [ForeignKey("Fk_Book_Author")]
-        public int AuthorId { get; set; }
+
+        [ForeignKey("Fk_Book_Author")] public int AuthorId { get; set; }
 
         public Author Author { get; set; }
+
+        /// <inheritdoc cref="Id" />
+        [Key]
+        public int Id { get; set; }
     }
 }

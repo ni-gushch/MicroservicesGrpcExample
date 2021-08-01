@@ -5,11 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 namespace MicroservicesGrpcExample.Platform.Books.Service.Extensions
 {
     /// <summary>
-    /// Extensions for instance of <see cref="IServiceCollection"/>
+    ///     Extensions for instance of <see cref="IServiceCollection" />
     /// </summary>
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddCustomServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCustomServices(this IServiceCollection services,
+            IConfiguration configuration)
         {
             services.AddSqLiteDbContextsRegistration(configuration);
             services.AddRepositoriesRegistration();

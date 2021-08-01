@@ -11,8 +11,8 @@ namespace MicroservicesGrpcExample.Platform.Books.BusinessLogic.Base
         where TResponse : class
         where TRepository : class
     {
-        protected readonly TRepository Repository;
         protected readonly IMapper Mapper;
+        protected readonly TRepository Repository;
 
         protected BaseHandler(TRepository repository, IMapper mapper)
         {

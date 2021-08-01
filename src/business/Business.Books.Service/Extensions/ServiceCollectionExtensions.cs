@@ -10,16 +10,16 @@ using Microsoft.OpenApi.Models;
 namespace MicroservicesGrpcExample.Client.Extensions
 {
     /// <summary>
-    /// Extension class that encapsulated settings and services in service collection
+    ///     Extension class that encapsulated settings and services in service collection
     /// </summary>
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// Add custom options to service collection
+        ///     Add custom options to service collection
         /// </summary>
-        /// <param name="services">Original instance of <see cref="IServiceCollection"/></param>
-        /// <param name="configuration">Instance of <see cref="IConfiguration"/></param>
-        /// <returns>Original instance of <see cref="IServiceCollection"/></returns>
+        /// <param name="services">Original instance of <see cref="IServiceCollection" /></param>
+        /// <param name="configuration">Instance of <see cref="IConfiguration" /></param>
+        /// <returns>Original instance of <see cref="IServiceCollection" /></returns>
         public static IServiceCollection AddCustomOptions(this IServiceCollection services,
             IConfiguration configuration)
         {
@@ -29,11 +29,11 @@ namespace MicroservicesGrpcExample.Client.Extensions
         }
 
         /// <summary>
-        /// Add Swagger to service and configure it
+        ///     Add Swagger to service and configure it
         /// </summary>
-        /// <param name="services">Original instance of <see cref="IServiceCollection"/></param>
-        /// <param name="configuration">Instance of <see cref="IConfiguration"/></param>
-        /// <returns>Original instance of <see cref="IServiceCollection"/></returns>
+        /// <param name="services">Original instance of <see cref="IServiceCollection" /></param>
+        /// <param name="configuration">Instance of <see cref="IConfiguration" /></param>
+        /// <returns>Original instance of <see cref="IServiceCollection" /></returns>
         public static IServiceCollection AddCustomSwagger(this IServiceCollection services,
             IConfiguration configuration)
         {
@@ -41,14 +41,14 @@ namespace MicroservicesGrpcExample.Client.Extensions
                 configuration.GetSection(nameof(ServiceConfiguration)).Get<ServiceConfiguration>();
             if (serviceConfiguration == null)
                 throw new Exception($"Configuration {typeof(ServiceConfiguration)} is not added, check appsettings");
-            
+
             services.AddSwaggerGen(opt =>
             {
-                opt.SwaggerDoc(serviceConfiguration.Version, new OpenApiInfo()
+                opt.SwaggerDoc(serviceConfiguration.Version, new OpenApiInfo
                 {
                     Version = serviceConfiguration.Version,
                     Title = serviceConfiguration.Name,
-                    Description = serviceConfiguration.Description,
+                    Description = serviceConfiguration.Description
                 });
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

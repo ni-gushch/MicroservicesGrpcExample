@@ -1,4 +1,3 @@
-using System;
 using MicroservicesGrpcExample.Client.Configurations;
 using MicroservicesGrpcExample.Client.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -12,15 +11,15 @@ namespace MicroservicesGrpcExample.Client
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
-        public IWebHostEnvironment WebHostEnvironment { get; }
-        
         public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
             Configuration = configuration;
             WebHostEnvironment = webHostEnvironment;
         }
-        
+
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment WebHostEnvironment { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -32,27 +31,22 @@ namespace MicroservicesGrpcExample.Client
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, 
+        public void Configure(IApplicationBuilder app,
             IWebHostEnvironment env,
             IOptions<ServiceConfiguration> serviceConfiguration)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseSwagger();
             app.UseSwaggerUI(opt =>
             {
-                opt.RoutePrefix = String.Empty;
-                opt.SwaggerEndpoint($"/swagger/{serviceConfiguration.Value.Version}/swagger.json", serviceConfiguration.Value.Name);
+                opt.RoutePrefix = string.Empty;
+                opt.SwaggerEndpoint($"/swagger/{serviceConfiguration.Value.Version}/swagger.json",
+                    serviceConfiguration.Value.Name);
             });
-            
+
             app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
