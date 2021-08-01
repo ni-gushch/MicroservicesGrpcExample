@@ -12,9 +12,7 @@
     <ItemGroup>
       <Folder Include="Models\DTOs" />
       <Folder Include="Queries\GetAllAuthors" />
-      <Folder Include="Queries\GetAllBooks" />
       <Folder Include="Queries\GetAuthorById" />
-      <Folder Include="Queries\GetBookById" />
     </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@ namespace MicroservicesGrpcExample.Platform.Books.BusinessLogic.Handlers
         public override async Task<DeleteBooksCommandResponse> Handle(DeleteBooksCommand request,
             CancellationToken cancellationToken)
         {
-            var result = await Repository.DeleteAsync(request., cancellationToken);
+            var result = await Repository.DeleteAsync(request.Id, cancellationToken);
             return Mapper.Map<DeleteBooksCommandResponse>(result);
         }
     }
